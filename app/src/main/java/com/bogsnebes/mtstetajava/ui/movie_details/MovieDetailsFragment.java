@@ -14,25 +14,23 @@ import android.view.ViewGroup;
 
 import com.bogsnebes.mtstetajava.R;
 
-public class FragmentMovieDetails extends Fragment {
+public class MovieDetailsFragment extends Fragment {
 
-    private FragmentMovieDetailsViewModel mViewModel;
+    private MovieDetailsViewModel mViewModel;
 
-    public static FragmentMovieDetails newInstance() {
-        return new FragmentMovieDetails();
+    public static MovieDetailsFragment newInstance() {
+        return new MovieDetailsFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_movie_details_fragment, container, false);
+        return inflater.inflate(R.layout.fragment_movie_details, container, false);
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(FragmentMovieDetailsViewModel.class);
-        // TODO: Use the ViewModel
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mViewModel = new ViewModelProvider(this).get(MovieDetailsViewModel.class);
     }
-
 }
